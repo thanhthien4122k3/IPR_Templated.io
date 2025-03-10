@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditorMainWindow</class>
+ <widget class="QMainWindow" name="EditorMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Editor</string>
+  </property>
+
+  <!-- Trung tâm của QMainWindow -->
+  <widget class="QWidget" name="centralwidget">
+   <!-- Layout dọc chính -->
+   <layout class="QVBoxLayout" name="verticalLayoutMain">
+
+    <!-- 1. Thanh công cụ trên cùng -->
+    <item>
+     <widget class="QFrame" name="topBar">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_topBar">
+       <!-- Nút File -->
+       <item>
+        <widget class="QPushButton" name="btnFile">
+         <property name="text">
+          <string>File</string>
+         </property>
+        </widget>
+       </item>
+       <!-- Nút Resize -->
+       <item>
+        <widget class="QPushButton" name="btnResize">
+         <property name="text">
+          <string>Resize</string>
+         </property>
+        </widget>
+       </item>
+       <!-- Spacer để đẩy "Untitled" vào giữa -->
+       <item>
+        <spacer name="horizontalSpacer_topBar1">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </spacer>
+       </item>
+       <!-- Nhãn Untitled ở giữa -->
+       <item>
+        <widget class="QLabel" name="labelUntitled">
+         <property name="text">
+          <string>Untitled</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <!-- Spacer để đẩy nút Save về bên phải -->
+       <item>
+        <spacer name="horizontalSpacer_topBar2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </spacer>
+       </item>
+       <!-- Nút Save -->
+       <item>
+        <widget class="QPushButton" name="btnSave">
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- 2. Khu vực chính (3 phần: toolbar trái, canvas giữa, layers phải) -->
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutMain">
+      <!-- 2.1 Toolbar trái -->
+      <item>
+       <widget class="QFrame" name="leftToolbar">
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <!-- Thiết lập kích thước để thu hẹp toolbar -->
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayoutToolbar">
+         <item>
+          <widget class="QPushButton" name="btnTemplate">
+           <property name="text">
+            <string>Template</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnUploads">
+           <property name="text">
+            <string>Uploads</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnShapes">
+           <property name="text">
+            <string>Shapes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnText">
+           <property name="text">
+            <string>Text</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnImages">
+           <property name="text">
+            <string>Images</string>
+           </property>
+          </widget>
+         </item>
+         <!-- Spacer để đẩy nút lên trên -->
+         <item>
+          <spacer name="verticalSpacer_toolbar">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <!-- 2.2 Canvas ở giữa -->
+      <item>
+       <widget class="QFrame" name="canvasFrame">
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <!-- Đặt sizePolicy cho Canvas để chiếm diện tích còn lại -->
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayoutCanvas">
+         <item>
+          <widget class="QLabel" name="labelCanvas">
+           <property name="text">
+            <string>Canvas</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <!-- 2.3 Bảng Layers bên phải -->
+      <item>
+       <widget class="QFrame" name="layersPanel">
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayoutLayers">
+         <item>
+          <widget class="QLabel" name="labelLayers">
+           <property name="text">
+            <string>Layers</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- 3. Thanh dưới cùng (Zoom) -->
+    <item>
+     <widget class="QFrame" name="bottomBar">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayoutBottomBar">
+       <item>
+        <widget class="QLabel" name="labelZoom">
+         <property name="text">
+          <string>Zoom:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="sliderZoom">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>200</number>
+         </property>
+         <property name="value">
+          <number>100</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnZoomOut">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnZoomIn">
+         <property name="text">
+          <string>+</string>
+         </property>
+        </widget>
+       </item>
+       <!-- Spacer để đẩy nút sang trái -->
+       <item>
+        <spacer name="horizontalSpacer_bottomBar">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- Menu bar, Tool bar, Status bar nếu cần -->
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

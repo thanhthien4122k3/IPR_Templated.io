@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1917</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>476</width>
+      <height>146</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>450</width>
+      <height>120</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>476</width>
+      <height>146</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>450</width>
+         <height>120</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>_Templated.io</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>475</x>
+      <y>0</y>
+      <width>1441</width>
+      <height>146</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>1260</x>
+       <y>60</y>
+       <width>100</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Log In</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Downloads/IPR img/Icons/login.png</normaloff>../Downloads/IPR img/Icons/login.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>475</x>
+      <y>146</y>
+      <width>1441</width>
+      <height>931</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QGroupBox" name="New_template">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>0</y>
+        <width>1421</width>
+        <height>931</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Create a new template</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2"/>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>146</y>
+      <width>476</width>
+      <height>934</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>My templates</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>C:/Users/Admin/Downloads/IPR img/Icons/template.png</normaloff>C:/Users/Admin/Downloads/IPR img/Icons/template.png</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>API intergration</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>C:/Users/Admin/Downloads/IPR img/Icons/API.png</normaloff>C:/Users/Admin/Downloads/IPR img/Icons/API.png</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Render</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>C:/Users/Admin/Downloads/IPR img/Icons/file.png</normaloff>C:/Users/Admin/Downloads/IPR img/Icons/file.png</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Embed</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>C:/Users/Admin/Downloads/IPR img/Icons/rendering.png</normaloff>C:/Users/Admin/Downloads/IPR img/Icons/rendering.png</iconset>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Playgrond</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>C:/Users/Admin/Downloads/IPR img/Icons/play.png</normaloff>C:/Users/Admin/Downloads/IPR img/Icons/play.png</iconset>
+     </property>
+    </item>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
