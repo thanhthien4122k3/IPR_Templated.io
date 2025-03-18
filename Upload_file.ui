@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1199</width>
+    <height>761</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>9</y>
+      <width>1181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QToolButton" name="toolButton">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/chevron-left.png</normaloff>../../Downloads/chevron-left.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushFile">
+       <property name="text">
+        <string>File</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushResize">
+       <property name="text">
+        <string>Resize</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Untitled">
+       <property name="text">
+        <string>Untitled</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushSave">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="Download">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/arrow-down.png</normaloff>../../Downloads/arrow-down.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>1181</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <widget class="QWidget" name="widget_Sidebar" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>121</width>
+          <height>511</height>
+         </rect>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>121</width>
+           <height>261</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="pushTemplate">
+            <property name="text">
+             <string>Template</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushUploads">
+            <property name="text">
+             <string>Uploads</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushShapes">
+            <property name="text">
+             <string>Shapes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushText">
+            <property name="text">
+             <string>Text</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushImages">
+            <property name="text">
+             <string>Images</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>110</y>
+          <width>221</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <widget class="QWidget" name="horizontalLayoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>221</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QToolButton" name="toolSearch">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../Downloads/search.png</normaloff>../../Downloads/search.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Search">
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Searching by name/tag</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>10</y>
+          <width>221</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QListWidget" name="listWidget">
+           <item>
+            <property name="text">
+             <string>Click/drag a file to this area</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/upload-cloud.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widgetCanvas" native="true">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>10</y>
+          <width>591</width>
+          <height>511</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>260</x>
+           <y>230</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Canvas</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="widgetLayers" native="true">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>10</y>
+          <width>181</width>
+          <height>511</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>240</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Layers</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>640</y>
+      <width>1181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolZoom_in">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Zoom in.png</normaloff>../../Downloads/Zoom in.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolZoom_out">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Zoom out.png</normaloff>../../Downloads/Zoom out.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolUndo">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Corner up-left (1).png</normaloff>../../Downloads/Corner up-left (1).png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolRedo">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Corner up-right (1).png</normaloff>../../Downloads/Corner up-right (1).png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1199</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
