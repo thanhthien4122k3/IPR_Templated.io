@@ -16,43 +16,71 @@ class ShapeTool:
         self.alpha = 255
         self.rotation = 0
 
+        self._draw_handlers = {
+            "square": self._draw_square,
+            "outline_square": self._draw_outline_square,
+            "circle": self._draw_circle,
+            "outline_circle": self._draw_outline_circle,
+            "triangle": self._draw_triangle,
+            "outline_triangle": self._draw_outline_triangle,
+            "line": self._draw_line,
+        }
+    
     def draw(self, screen):
         temp_surface = pygame.Surface((self.width, self.height), pygame.SRCALPHA)
         temp_surface.set_alpha(self.alpha)
 
-        if self.shape_type == "square":
-            if self.fill_color:
-                pygame.draw.rect(temp_surface, self.fill_color, (0, 0, self.width, self.height), 0, self.border_radius)
-            pygame.draw.rect(temp_surface, self.line_color, (0, 0, self.width, self.height), self.line_thickness, self.border_radius)
-        # Tương tự cho các loại hình khác: circle, triangle, line...
-        elif self.shape_type == "outline_square":
-            pygame.draw.rect(temp_surface, self.line_color, (0, 0, self.width, self.height), self.line_thickness, self.border_radius)
+        handler = self._draw_handlers.get(self.shape_type)
+        if handler:
+            handler(temp_surface)
 
-        elif self.shape_type == "circle":
-            if self.fill_color:
-                pygame.draw.circle(temp_surface, self.fill_color, (self.width // 2, self.height // 2), min(self.width, self.height) // 2)
-            pygame.draw.circle(temp_surface, self.line_color, (self.width // 2, self.height // 2), min(self.width, self.height) // 2, self.line_thickness)
-
-        elif self.shape_type == "outline_circle":
-            pygame.draw.circle(temp_surface, self.line_color, (self.width // 2, self.height // 2), min(self.width, self.height) // 2, self.line_thickness)
-
-        elif self.shape_type == "triangle":
-            points = [(self.width // 2, 0), (0, self.height), (self.width, self.height)]
-            if self.fill_color:
-                pygame.draw.polygon(temp_surface, self.fill_color, points)
-            pygame.draw.polygon(temp_surface, self.line_color, points, self.line_thickness)
-
-        elif self.shape_type == "outline_triangle":
-            points = [(self.width // 2, 0), (0, self.height), (self.width, self.height)]
-            pygame.draw.polygon(temp_surface, self.line_color, points, self.line_thickness)
-
-        elif self.shape_type == "line":
-            start_x, start_y = 0, self.height // 2
-            end_x, end_y = self.width, self.height // 2
-        pygame.draw.line(temp_surface, self.line_color, (start_x, start_y), (end_x, end_y), self.line_thickness)
-         
         rotated_surface = pygame.transform.rotate(temp_surface, self.rotation)
         screen.blit(rotated_surface, (self.x, self.y))
+
+    def _draw_square(self, surface):
+        if self.fill_color:
+            pygame.draw.rect(surface, self.fill_color, (0, 0, self.width, self.height), 0, self.border_radius)
+        pygame.draw.rect(surface, self.line_color, (0, 0, self.width, self.height), self.line_thickness, self.border_radius)
+
+    def _draw_outline_square(self, surface):
+        pygame.draw.rect(surface, self.line_color, (0, 0, self.width, self.height), self.line_thickness, self.border_radius)
+
+    def _draw_circle(self, surface):
+        center = (self.width // 2, self.height // 2)
+        radius = min(self.width, self.height) // 2
+        if self.fill_color:
+            pygame.draw.circle(surface, self.fill_color, center, radius)
+        pygame.draw.circle(surface, self.line_color, center, radius, self.line_thickness)
+
+    def _draw_outline_circle(self, surface):
+        center = (self.width // 2, self.height // 2)
+        radius = min(self.width, self.height) // 2
+        pygame.draw.circle(surface, self.line_color, center, radius, self.line_thickness)
+
+    def _draw_triangle(self, surface):
+        points = [(self.width // 2, 0), (0, self.height), (self.width, self.height)]
+        if self.fill_color:
+            pygame.draw.polygon(surface, self.fill_color, points)
+        pygame.draw.polygon(surface, self.line_color, points, self.line_thickness)
+
+    def _draw_outline_triangle(self, surface):
+        points = [(self.width // 2, 0), (0, self.height), (self.width, self.height)]
+        pygame.draw.polygon(surface, self.line_color, points, self.line_thickness)
+
+    def _draw_line(self, surface):
+        start = (0, self.height // 2)
+        end = (self.width, self.height // 2)
+        pygame.draw.line(surface, self.line_color, start, end, self.line_thickness)
+
+    def is_point_inside(self, mouse_x, mouse_y):
+        local_x = mouse_x - self.x
+        local_y = mouse_y - self.y
+        angle_rad = math.radians(-self.rotation)
+        cos_a = math.cos(angle_rad)
+        sin_a = math.sin(angle_rad)
+        rotated_x = local_x * cos_a + local_y * sin_a
+        rotated_y = -local_x * sin_a + local_y * cos_a
+        return 0 <= rotated_x <= self.width and 0 <= rotated_y <= self.height
 
     def is_point_inside(self, mouse_x, mouse_y):
         local_x = mouse_x - self.x
