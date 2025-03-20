@@ -25,7 +25,32 @@ class ShapeTool:
                 pygame.draw.rect(temp_surface, self.fill_color, (0, 0, self.width, self.height), 0, self.border_radius)
             pygame.draw.rect(temp_surface, self.line_color, (0, 0, self.width, self.height), self.line_thickness, self.border_radius)
         # Tương tự cho các loại hình khác: circle, triangle, line...
+        elif self.shape_type == "outline_square":
+            pygame.draw.rect(temp_surface, self.line_color, (0, 0, self.width, self.height), self.line_thickness, self.border_radius)
 
+        elif self.shape_type == "circle":
+            if self.fill_color:
+                pygame.draw.circle(temp_surface, self.fill_color, (self.width // 2, self.height // 2), min(self.width, self.height) // 2)
+            pygame.draw.circle(temp_surface, self.line_color, (self.width // 2, self.height // 2), min(self.width, self.height) // 2, self.line_thickness)
+
+        elif self.shape_type == "outline_circle":
+            pygame.draw.circle(temp_surface, self.line_color, (self.width // 2, self.height // 2), min(self.width, self.height) // 2, self.line_thickness)
+
+        elif self.shape_type == "triangle":
+            points = [(self.width // 2, 0), (0, self.height), (self.width, self.height)]
+            if self.fill_color:
+                pygame.draw.polygon(temp_surface, self.fill_color, points)
+            pygame.draw.polygon(temp_surface, self.line_color, points, self.line_thickness)
+
+        elif self.shape_type == "outline_triangle":
+            points = [(self.width // 2, 0), (0, self.height), (self.width, self.height)]
+            pygame.draw.polygon(temp_surface, self.line_color, points, self.line_thickness)
+
+        elif self.shape_type == "line":
+            start_x, start_y = 0, self.height // 2
+            end_x, end_y = self.width, self.height // 2
+        pygame.draw.line(temp_surface, self.line_color, (start_x, start_y), (end_x, end_y), self.line_thickness)
+         
         rotated_surface = pygame.transform.rotate(temp_surface, self.rotation)
         screen.blit(rotated_surface, (self.x, self.y))
 
