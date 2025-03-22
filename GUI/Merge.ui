@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1198</width>
+    <height>826</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1181</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalTopbar">
+     <item>
+      <widget class="QToolButton" name="toolBack">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/chevron-left.png</normaloff>../../Downloads/chevron-left.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnFile">
+       <property name="text">
+        <string>File</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnResize">
+       <property name="text">
+        <string>Resize</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Untitled">
+       <property name="text">
+        <string>Untitled</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSave">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/arrow-down.png</normaloff>../../Downloads/arrow-down.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>710</y>
+      <width>1181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolZoom_in">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Zoom in.png</normaloff>../../Downloads/Zoom in.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolZoom_out">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Zoom out.png</normaloff>../../Downloads/Zoom out.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolUndo">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Corner up-left (1).png</normaloff>../../Downloads/Corner up-left (1).png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolRedo">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Downloads/Corner up-right (1).png</normaloff>../../Downloads/Corner up-right (1).png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>1181</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QWidget" name="widgetsidebar" native="true">
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(0, 0, 0);</string>
+       </property>
+       <widget class="QWidget" name="widgetsidebar_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>131</width>
+          <height>571</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(0, 0, 0);</string>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>131</width>
+           <height>231</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btnTemplate_2">
+            <property name="text">
+             <string>Template</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnUploads_2">
+            <property name="text">
+             <string>Uploads</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnShapes_2">
+            <property name="text">
+             <string>Shapes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnText_2">
+            <property name="text">
+             <string>Text</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnImages_2">
+            <property name="text">
+             <string>Images</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>10</y>
+          <width>1021</width>
+          <height>571</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="Upload_file">
+         <widget class="QWidget" name="widgetCanvas_2" native="true">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>20</y>
+            <width>531</width>
+            <height>541</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QLabel" name="labelCanvas">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>270</y>
+             <width>55</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Canvas</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="widgetLayers" native="true">
+          <property name="geometry">
+           <rect>
+            <x>830</x>
+            <y>20</y>
+            <width>181</width>
+            <height>541</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QLabel" name="labelLayers">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>270</y>
+             <width>55</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Layers</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>269</width>
+            <height>541</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QWidget" name="widget" native="true">
+             <widget class="QWidget" name="widget_2" native="true">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>110</y>
+                <width>271</width>
+                <height>61</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-color: rgb(0, 0, 0);</string>
+              </property>
+              <widget class="QWidget" name="horizontalLayoutWidget_4">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>10</y>
+                 <width>221</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QToolButton" name="toolSearch_5">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../Downloads/search.png</normaloff>../../Downloads/search.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Search_5">
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Searching by name/tag</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+             <widget class="QWidget" name="widget_3" native="true">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>-1</y>
+                <width>271</width>
+                <height>81</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-color: rgb(0, 0, 0);</string>
+              </property>
+              <widget class="QPushButton" name="pushUpload">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>30</y>
+                 <width>219</width>
+                 <height>28</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Click/drag a file to this area</string>
+               </property>
+              </widget>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="Add_shapes">
+         <widget class="QWidget" name="widgetCanvas" native="true">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>60</y>
+            <width>641</width>
+            <height>501</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QLabel" name="labelCanvas_2">
+           <property name="geometry">
+            <rect>
+             <x>300</x>
+             <y>290</y>
+             <width>41</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Canvas</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="widgetLayers_3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>860</x>
+            <y>20</y>
+            <width>151</width>
+            <height>541</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QLabel" name="labelLayers_2">
+           <property name="geometry">
+            <rect>
+             <x>64</x>
+             <y>290</y>
+             <width>41</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Layers</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="widgetShapes" native="true">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>181</width>
+            <height>551</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QListWidget" name="Shapes">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>10</y>
+             <width>171</width>
+             <height>301</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Square_filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/image 17.png</activeoff>
+              <activeon>../../Downloads/image 17.png</activeon>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Circle_filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Ellipse 1.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Triangle_filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Polygon 1.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Square_not filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Rectangle 36.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Circle_not filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Ellipse 2.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Triangle_not filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Polygon 2.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Star_filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Star 1.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Heart_filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Vector (1).png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Polygon_filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Polygon 3.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Star_not filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Star 2.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Heart_not filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Vector (2).png</activeoff>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Polygon_not filled</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <activeoff>../../Downloads/Polygon 4.png</activeoff>
+             </iconset>
+            </property>
+           </item>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="Add_Edit_image">
+         <widget class="QWidget" name="widgetCanvas_3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>270</x>
+            <y>40</y>
+            <width>571</width>
+            <height>521</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>290</y>
+             <width>41</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Canvas</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="widgetLayers_4" native="true">
+          <property name="geometry">
+           <rect>
+            <x>850</x>
+            <y>20</y>
+            <width>151</width>
+            <height>541</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <widget class="QLabel" name="labelLayers_3">
+           <property name="geometry">
+            <rect>
+             <x>64</x>
+             <y>290</y>
+             <width>41</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Layers</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>251</width>
+            <height>551</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QWidget" name="widget_4" native="true">
+             <widget class="QWidget" name="widget_9" native="true">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>251</width>
+                <height>71</height>
+               </rect>
+              </property>
+              <widget class="QWidget" name="horizontalLayoutWidget_6">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>20</y>
+                 <width>251</width>
+                 <height>32</height>
+                </rect>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_10">
+                <item>
+                 <widget class="QLineEdit" name="Search_image">
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Search for images...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="toolSearch_7">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../Downloads/search.png</normaloff>../../Downloads/search.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+             <widget class="QWidget" name="widget_10" native="true">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>90</y>
+                <width>251</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-color: rgb(0, 0, 0);</string>
+              </property>
+              <widget class="QComboBox" name="comboBox">
+               <property name="geometry">
+                <rect>
+                 <x>-2</x>
+                 <y>0</y>
+                 <width>251</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text">
+                 <string>All</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Photo</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Vector</string>
+                </property>
+               </item>
+              </widget>
+             </widget>
+             <widget class="QListWidget" name="listWidget">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>130</y>
+                <width>251</width>
+                <height>421</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>Flower</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <activeoff>../../Downloads/flower.jpg</activeoff>
+                </iconset>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Mountain</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <activeoff>../../Downloads/IPR Project UI Design/Add- Edit image/image 3.png</activeoff>
+                </iconset>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Sunset</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <activeoff>../../Downloads/IPR Project UI Design (1)/Add- Edit image/image 4.png</activeoff>
+                </iconset>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1198</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
