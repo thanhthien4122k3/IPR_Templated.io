@@ -1,146 +1,147 @@
-import copy
-from PIL import Image, ImageOps, ImageDraw
+import pygame
+from PIL import Image
 from models.image_model import ImageModel
+from tools.image_tool import ImageTool
 
 class ImageController:
     def __init__(self):
         """
-        Initialize the image controller with an empty list of images
+        Initialize the controller with an empty list of image models
         """
-        self.images = []  # List to store ImageModel instances
-        self.selected_image = None  # Currently selected image
+        self._image_models = []  # List to store all image models
+        self._active_model = None  # The currently selected active image model
+        self._image_tool = None  # The image tool for editing images
     
-    def create_image(self, x, y, width, height):
+    def create_image_model(self, file_path, x=0, y=0):
         """
-        Create a new image and add it to the controller
+        Create and add a new image model to the controller.
         
         Args:
-            x (int): X-coordinate of the image
-            y (int): Y-coordinate of the image
-            width (int): Width of the image
-            height (int): Height of the image
+            file_path (str): Path to the image file
+            x (int): Initial x position for the image
+            y (int): Initial y position for the image
+        """
+        image_model = ImageModel(file_path, x, y)
+        self._image_models.append(image_model)
+        return image_model
+    
+    def select_image_model(self, mouse_x, mouse_y):
+        """
+        Select an image model based on the mouse coordinates.
+        
+        Args:
+            mouse_x (int): X-coordinate of the mouse
+            mouse_y (int): Y-coordinate of the mouse
         
         Returns:
-            ImageModel: The newly created image model
+            ImageModel: The selected image model, or None if no model is selected
         """
-        new_image = ImageModel(x, y, width, height)
-        self.images.append(new_image)
-        return new_image
-    
-    def delete_image(self, image):
-        """
-        Remove an image from the controller
-        
-        Args:
-            image (ImageModel): The image to be deleted
-        """
-        if image in self.images:
-            self.images.remove(image)
-            if self.selected_image == image:
-                self.selected_image = None
-    
-    def select_image(self, mouse_x, mouse_y):
-        """
-        Select an image at the given mouse coordinates
-        
-        Args:
-            mouse_x (int): X-coordinate of mouse
-            mouse_y (int): Y-coordinate of mouse
-        
-        Returns:
-            ImageModel or None: The selected image, or None if no image is selected
-        """
-        # Reverse iteration to select top-most image in overlapping scenarios
-        for image in reversed(self.images):
-            if image.is_point_inside(mouse_x, mouse_y):
-                # Deselect previous image
-                if self.selected_image:
-                    self.selected_image.selected = False
-                
-                # Select new image
-                image.selected = True
-                self.selected_image = image
-                return image
-        
-        # Deselect if no image is found
-        if self.selected_image:
-            self.selected_image.selected = False
-            self.selected_image = None
-        
+        for model in reversed(self._image_models):
+            if model.is_point_inside(mouse_x, mouse_y):
+                if self._active_model:
+                    self._active_model.selected = False  # Deselect previous model
+                model.selected = True
+                self._active_model = model
+                return model
+        if self._active_model:
+            self._active_model.selected = False
+            self._active_model = None
         return None
     
-    def move_selected_image(self, dx, dy):
+    def move_active_model(self, dx, dy):
         """
-        Move the currently selected image
+        Move the currently active image model by dx, dy.
         
         Args:
-            dx (int): Change in x-coordinate
-            dy (int): Change in y-coordinate
+            dx (int): Change in x position
+            dy (int): Change in y position
         """
-        if self.selected_image:
-            self.selected_image.move(dx, dy)
+        if self._active_model:
+            self._active_model.move(dx, dy)
     
-    def rotate_selected_image(self, angle):
+    def rotate_active_model(self, angle):
         """
-        Rotate the currently selected image
+        Rotate the currently active image model by a given angle.
         
         Args:
             angle (int): Rotation angle in degrees
         """
-        if self.selected_image:
-            self.selected_image.rotate(angle)
+        if self._active_model:
+            self._active_model.rotate(angle)
     
-    def apply_transformation(self, transformation_func):
+    def flip_active_model_horizontal(self):
+        """Flip the currently active image model horizontally."""
+        if self._active_model:
+            self._active_model.image = pygame.transform.flip(self._active_model.image, True, False)
+    
+    def flip_active_model_vertical(self):
+        """Flip the currently active image model vertically."""
+        if self._active_model:
+            self._active_model.image = pygame.transform.flip(self._active_model.image, False, True)
+    
+    def add_image_tool(self, x, y, width, height):
         """
-        Apply a custom transformation to the selected image
+        Create and assign an ImageTool for editing the image.
         
         Args:
-            transformation_func (callable): A function that takes an ImageModel as an argument
+            x (int): X-coordinate for the tool
+            y (int): Y-coordinate for the tool
+            width (int): Width of the tool's area
+            height (int): Height of the tool's area
         """
-        if self.selected_image:
-            transformation_func(self.selected_image)
+        self._image_tool = ImageTool(x, y, width, height)
     
-    def get_images_at_point(self, mouse_x, mouse_y):
+    def apply_image_tool_action(self, action, *args):
         """
-        Get all images at a specific point
+        Apply a specific image tool action like flipping, rotating, etc.
         
         Args:
-            mouse_x (int): X-coordinate of mouse
-            mouse_y (int): Y-coordinate of mouse
-        
-        Returns:
-            list: List of images at the given point
+            action (str): The action to perform (flip, rotate, etc.)
+            *args: Additional arguments for the action (e.g., angle for rotate)
         """
-        return [image for image in self.images if image.is_point_inside(mouse_x, mouse_y)]
+        if self._image_tool:
+            if action == "flip_horizontal":
+                self._image_tool.flip_horizontal()
+            elif action == "flip_vertical":
+                self._image_tool.flip_vertical()
+            elif action == "rotate":
+                angle = args[0] if args else 0
+                self._image_tool.rotate(angle)
+            elif action == "round_corners":
+                radius = args[0] if args else 10
+                self._image_tool.round_corners(radius)
+            elif action == "add_border":
+                border_size = args[0] if args else 10
+                border_color = args[1] if len(args) > 1 else (0, 0, 0)
+                self._image_tool.add_border(border_size, border_color)
+            elif action == "adjust_transparency":
+                alpha = args[0] if args else 255
+                self._image_tool.adjust_transparency(alpha)
+            elif action == "crop":
+                box = args[0] if args else (0, 0, self._image_tool.width, self._image_tool.height)
+                self._image_tool.crop(box)
     
-    def clear_all_images(self):
-        """
-        Remove all images from the controller
-        """
-        self.images.clear()
-        self.selected_image = None
+    def reset_image_tool(self):
+        """Reset the image tool to its original state."""
+        if self._image_tool:
+            self._image_tool.reset_to_original()
+
+    def get_all_image_models(self):
+        """Get all image models managed by the controller."""
+        return self._image_models
+
+    def get_active_image_model(self):
+        """Get the currently active image model."""
+        return self._active_model
     
-    def duplicate_selected_image(self):
+    def remove_image_model(self, image_model):
         """
-        Create a duplicate of the selected image
+        Remove a specific image model from the controller.
         
-        Returns:
-            ImageModel or None: The duplicated image, or None if no image is selected
+        Args:
+            image_model (ImageModel): The image model to remove
         """
-        if self.selected_image:
-            # Create a new image with offset
-            new_image = self.create_image(
-                self.selected_image.x + 20,  # Slight offset
-                self.selected_image.y + 20,
-                self.selected_image.width,
-                self.selected_image.height
-            )
-            
-            # Copy image properties
-            new_image.current_image = copy.deepcopy(self.selected_image.current_image)
-            new_image.original_image = copy.deepcopy(self.selected_image.original_image)
-            new_image.rotation = self.selected_image.rotation
-            
-            return new_image
-        
-        return None
+        if image_model in self._image_models:
+            self._image_models.remove(image_model)
+            if self._active_model == image_model:
+                self._active_model = None
