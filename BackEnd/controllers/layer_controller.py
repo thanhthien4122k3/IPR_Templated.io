@@ -1,6 +1,8 @@
 # controllers/layer_controller.py
 import copy
 
+from BackEnd.models.layer_model import LayerModel
+
 class LayerController:
     def __init__(self, layerList_model):
         """Initialize the layer controller with a layer list model."""
