@@ -14,6 +14,12 @@ class ShapeTool:
             "triangle": self._draw_triangle,
             "outline_triangle": self._draw_outline_triangle,
             "line": self._draw_line,
+            "star": self._draw_star,  
+            "outline_star": self._draw_outline_star,  
+            "heart": self._draw_heart,  
+            "outline_heart": self._draw_outline_heart, 
+            "polygon": self._draw_polygon,  
+            "outline_polygon": self._draw_outline_polygon,
         }
     
     # Draw a shape on the given surface with specified properties
@@ -69,3 +75,84 @@ class ShapeTool:
         start = (0, surface.get_height() // 2)
         end = (surface.get_width(), surface.get_height() // 2)
         pygame.draw.line(surface, line_color, start, end, line_thickness)
+
+    # Draw a filled star
+    def _draw_star(self, surface, line_color, line_thickness, fill_color, border_radius):
+        center_x, center_y = surface.get_width() // 2, surface.get_height() // 2
+        outer_radius = min(surface.get_width(), surface.get_height()) // 2
+        inner_radius = outer_radius // 2
+        points = []
+        for i in range(10):
+            angle = math.radians(i * 36)
+            radius = outer_radius if i % 2 == 0 else inner_radius
+            x = center_x + radius * math.cos(angle)
+            y = center_y + radius * math.sin(angle)
+            points.append((x, y))
+        if fill_color:
+            pygame.draw.polygon(surface, fill_color, points)
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
+
+    # Draw an outline-only star
+    def _draw_outline_star(self, surface, line_color, line_thickness, fill_color, border_radius):
+        
+        center_x, center_y = surface.get_width() // 2, surface.get_height() // 2
+        outer_radius = min(surface.get_width(), surface.get_height()) // 2
+        inner_radius = outer_radius // 2
+        points = []
+        for i in range(10):
+            angle = math.radians(i * 36)
+            radius = outer_radius if i % 2 == 0 else inner_radius
+            x = center_x + radius * math.cos(angle)
+            y = center_y + radius * math.sin(angle)
+            points.append((x, y))
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
+
+    # Draw a filled heart.
+    def _draw_heart(self, surface, line_color, line_thickness, fill_color, border_radius):
+        width, height = surface.get_width(), surface.get_height()
+        points = []
+        for t in range(0, 360, 5):
+            t_rad = math.radians(t)
+            x = width // 2 + 16 * (math.sin(t_rad) ** 3) * (width / 100)
+            y = height // 2 - (13 * math.cos(t_rad) - 5 * math.cos(2 * t_rad) - 2 * math.cos(3 * t_rad) - math.cos(4 * t_rad)) * (height / 100)
+            points.append((x, y))
+        if fill_color:
+            pygame.draw.polygon(surface, fill_color, points)
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
+
+    # Draw an outline-only heart
+    def _draw_outline_heart(self, surface, line_color, line_thickness, fill_color, border_radius):
+        width, height = surface.get_width(), surface.get_height()
+        points = []
+        for t in range(0, 360, 5):
+            t_rad = math.radians(t)
+            x = width // 2 + 16 * (math.sin(t_rad) ** 3) * (width / 100)
+            y = height // 2 - (13 * math.cos(t_rad) - 5 * math.cos(2 * t_rad) - 2 * math.cos(3 * t_rad) - math.cos(4 * t_rad)) * (height / 100)
+            points.append((x, y))
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
+
+    # Draw a filled polygon (hexagon)
+    def _draw_polygon(self, surface, line_color, line_thickness, fill_color, border_radius):
+        center_x, center_y = surface.get_width() // 2, surface.get_height() // 2
+        radius = min(surface.get_width(), surface.get_height()) // 2
+        points = []
+        for i in range(6):
+            angle = math.radians(i * 60)
+            x = center_x + radius * math.cos(angle)
+            y = center_y + radius * math.sin(angle)
+            points.append((x, y))
+        if fill_color:
+            pygame.draw.polygon(surface, fill_color, points)
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
+
+    # Draw an outline-only polygon (hexagon).
+    def _draw_outline_polygon(self, surface, line_color, line_thickness, fill_color, border_radius):
+        center_x, center_y = surface.get_width() // 2, surface.get_height() // 2
+        radius = min(surface.get_width(), surface.get_height()) // 2
+        points = []
+        for i in range(6):
+            angle = math.radians(i * 60)
+            x = center_x + radius * math.cos(angle)
+            y = center_y + radius * math.sin(angle)
+            points.append((x, y))
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
