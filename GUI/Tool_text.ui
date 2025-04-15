@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>131</width>
+    <height>46</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="customTooltip" native="true">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>6</y>
+      <width>120</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);</string>
+    </property>
+    <widget class="QPushButton" name="duplicateButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>5</y>
+       <width>26</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: none; } QPushButton:hover { background-color: #e0e0e0; }</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
+       <normaloff>:/box_text/duplicate.png</normaloff>:/box_text/duplicate.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="lockButton">
+     <property name="geometry">
+      <rect>
+       <x>46</x>
+       <y>5</y>
+       <width>26</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: none; } QPushButton:hover { background-color: #e0e0e0; }</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
+       <normaloff>:/box_text/padlock.png</normaloff>:/box_text/padlock.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deleteButton">
+     <property name="geometry">
+      <rect>
+       <x>82</x>
+       <y>5</y>
+       <width>26</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: none; } QPushButton:hover { background-color: #e0e0e0; }</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
+       <normaloff>:/box_text/delete.png</normaloff>:/box_text/delete.png</iconset>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="D:/QT_Designer/IPR/img/Roots_img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
