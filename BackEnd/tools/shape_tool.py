@@ -14,6 +14,7 @@ class ShapeTool:
             "triangle": self._draw_triangle,
             "outline_triangle": self._draw_outline_triangle,
             "line": self._draw_line,
+             "star": self._draw_star,
         }
     
     # Draw a shape on the given surface with specified properties
@@ -69,3 +70,20 @@ class ShapeTool:
         start = (0, surface.get_height() // 2)
         end = (surface.get_width(), surface.get_height() // 2)
         pygame.draw.line(surface, line_color, start, end, line_thickness)
+
+    # Draw a star
+    def _draw_star(self, surface, line_color, line_thickness, fill_color, border_radius):
+        """Draw a filled star."""
+        center_x, center_y = surface.get_width() // 2, surface.get_height() // 2
+        outer_radius = min(surface.get_width(), surface.get_height()) // 2
+        inner_radius = outer_radius // 2
+        points = []
+        for i in range(10):
+            angle = math.radians(i * 36)
+            radius = outer_radius if i % 2 == 0 else inner_radius
+            x = center_x + radius * math.cos(angle)
+            y = center_y + radius * math.sin(angle)
+            points.append((x, y))
+        if fill_color:
+            pygame.draw.polygon(surface, fill_color, points)
+        pygame.draw.polygon(surface, line_color, points, line_thickness)
