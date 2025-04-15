@@ -1,6 +1,7 @@
 # controllers/shape_controller.py
 from models.shape_model import ShapeModel
 
+
 class ShapeController:
     def __init__(self, layer_controller):
         """Initialize the shape controller with a reference to the layer controller."""
