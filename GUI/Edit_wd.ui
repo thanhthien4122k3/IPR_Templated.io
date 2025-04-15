@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditorMainWindow</class>
+ <widget class="QMainWindow" name="EditorMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayoutMain">
+    <item>
+     <widget class="QFrame" name="topBar">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_topBar">
+       <item>
+        <widget class="QPushButton" name="btnFile">
+         <property name="text">
+          <string>File</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnResize">
+         <property name="text">
+          <string>Resize</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_topBar1">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelUntitled">
+         <property name="text">
+          <string>Untitled</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalLayoutSpacer_topBar2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSave">
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutTools">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnText">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Text</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+          background-color: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 5px;
+         }
+         QPushButton:hover {
+          background-color: #E0E0E0;
+         }
+         QPushButton:checked {
+          background-color: #2196F3;
+          border-color: #1565C0;
+         }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/button/buttontext.png</normaloff>:/button/buttontext.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnShapes">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Shapes</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+          background-color: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 5px;
+         }
+         QPushButton:hover {
+          background-color: #E0E0E0;
+         }
+         QPushButton:checked {
+          background-color: #2196F3;
+          border-color: #1565C0;
+         }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/button/button_shape.png</normaloff>:/button/button_shape.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnUpload">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Upload</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+          background-color: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 5px;
+         }
+         QPushButton:hover {
+          background-color: #E0E0E0;
+         }
+         QPushButton:checked {
+          background-color: #2196F3;
+          border-color: #1565C0;
+         }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../img/upload-button.png</normaloff>../img/upload-button.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnImages">
+        <property name="minimumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Images</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+          background-color: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 5px;
+         }
+         QPushButton:hover {
+          background-color: #E0E0E0;
+         }
+         QPushButton:checked {
+          background-color: #2196F3;
+          border-color: #1565C0;
+         }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/button/images-square-outlined-interface-button-symbol.png</normaloff>:/button/images-square-outlined-interface-button-symbol.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="toolsStackedWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>71</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>71</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QStackedWidget {
+          background-color: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 5px;
+         }</string>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="pageText">
+         <layout class="QVBoxLayout" name="verticalLayoutText">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutText">
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btnBold">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Bold</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string>B</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnItalic">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Italic</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string>I</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnUnderline">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Underline</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string>U</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnAlignLeft">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Align Left</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>:/newPrefix/align-left.png</normaloff>:/newPrefix/align-left.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>16</width>
+                <height>16</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnAlignCenter">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Align Center</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>:/newPrefix/format.png</normaloff>:/newPrefix/format.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>16</width>
+                <height>16</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnAlignRight">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Align Right</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>:/newPrefix/align-right.png</normaloff>:/newPrefix/align-right.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>16</width>
+                <height>16</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnTextColor">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Text Color</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+                color: #FF0000;
+               }
+               QPushButton:hover {
+                background-color: #E0E0E0;
+               }</string>
+              </property>
+              <property name="text">
+               <string>A</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QComboBox" name="fontComboBox">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+              padding: 2px;
+             }
+             QComboBox:hover {
+              background-color: #E0E0E0;
+             }
+             QComboBox::drop-down {
+              width: 20px;
+              border-left: 1px solid #E0E0E0;
+             }
+             QComboBox QAbstractItemView {
+              border: 1px solid #E0E0E0;
+              background-color: #FFFFFF;
+              selection-background-color: #2196F3;
+             }</string>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <property name="placeholderText" stdset="0">
+             <string>Search fonts...</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Arial</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Times New Roman</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Helvetica</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Comic Sans MS</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Calibri</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageShapes">
+         <layout class="QHBoxLayout" name="horizontalLayoutShapes">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="addButtonShapes">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>36</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+              background-color: #4CAF50;
+              color: white;
+              border-radius: 4px;
+              padding: 2px;
+             }
+             QPushButton:hover {
+              background-color: #45A049;
+             }</string>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSquare">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Square</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+             }
+             QPushButton:hover {
+              background-color: #E0E0E0;
+             }</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../Downloads/image 17.png</normaloff>../../Downloads/image 17.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCircle">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Circle</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+             }
+             QPushButton:hover {
+              background-color: #E0E0E0;
+             }</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../Downloads/Ellipse 1.png</normaloff>../../Downloads/Ellipse 1.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnTriangle">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Triangle</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+             }
+             QPushButton:hover {
+              background-color: #E0E0E0;
+             }</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../Downloads/Polygon 1.png</normaloff>../../Downloads/Polygon 1.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStar">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Star</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+             }
+             QPushButton:hover {
+              background-color: #E0E0E0;
+             }</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../Downloads/Star 1.png</normaloff>../../Downloads/Star 1.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageUpload">
+         <layout class="QHBoxLayout" name="horizontalLayoutUpload">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutUploadButtons">
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="chooseFileButton">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                background-color: #2196F3;
+                color: white;
+                border-radius: 4px;
+                padding: 2px;
+               }
+               QPushButton:hover {
+                background-color: #1E88E5;
+               }</string>
+              </property>
+              <property name="text">
+               <string>Choose File</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="uploadButton">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                padding: 2px;
+               }
+               QPushButton:hover {
+                background-color: #45A049;
+               }</string>
+              </property>
+              <property name="text">
+               <string>Upload</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QListWidget" name="uploadedFilesList">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QListWidget {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+              background-color: #FFFFFF;
+             }</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageImages">
+         <layout class="QHBoxLayout" name="horizontalLayoutImages">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutImageButtons">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="uploadImageButton">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                padding: 2px;
+               }
+               QPushButton:hover {
+                background-color: #45A049;
+               }</string>
+              </property>
+              <property name="text">
+               <string>Upload Image</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QListWidget" name="imagesList">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QListWidget {
+              border: 1px solid #E0E0E0;
+              border-radius: 4px;
+              background-color: #FFFFFF;
+             }</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacerTools">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayoutMain">
+      <item>
+       <widget class="QFrame" name="canvasFrame">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayoutCanvas">
+         <item>
+          <widget class="QLabel" name="labelCanvas">
+           <property name="text">
+            <string>Canvas</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="layersPanel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayoutLayers">
+         <item>
+          <widget class="QLabel" name="labelLayers">
+           <property name="text">
+            <string>Layers</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QFrame" name="bottomBar">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayoutBottomBar">
+       <item>
+        <widget class="QLabel" name="labelZoom">
+         <property name="text">
+          <string>Zoom:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="sliderZoom">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>200</number>
+         </property>
+         <property name="value">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnZoomOut">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnZoomIn">
+         <property name="text">
+          <string>+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_bottomBar">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../img/Roots_img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
