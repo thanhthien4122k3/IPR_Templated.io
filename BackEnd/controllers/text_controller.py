@@ -59,30 +59,4 @@ class TextController:
 
 
 
-# # Example usage - UI Integration
-# def example_ui_integration():
-#     # Initialize the controller
-#     controller = TextController()
 
-#     # Create text models with style
-#     controller.create_text_model(100, 100, "Heading 1", TextStyle.HEADING)
-#     controller.create_text_model(200, 200, "This is a body text", TextStyle.BODY)
-
-#     # Select a text model from UI (for example, at coordinates 120, 110)
-#     controller.select_model_at_point(120, 110)
-
-#     # Apply formatting on active model
-#     controller.apply_formatting_to_active_model(
-#         uppercase=True, 
-#         fill_color=(255, 255, 255),
-#         letter_spacing=2
-#     )
-
-#     # Move the active model
-#     controller.move_active_model(50, 50)
-
-#     # Rotate active model
-#     controller.rotate_active_model(45)
-
-#     # Duplicate the active model
-#     duplicated = controller.duplicate_active_model()
