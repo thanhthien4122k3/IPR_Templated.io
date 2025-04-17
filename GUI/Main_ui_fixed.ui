@@ -1087,17 +1087,578 @@
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacerTools">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+       <layout class="QHBoxLayout" name="horizontalLayoutToolsContainer">
+        <property name="spacing">
+         <number>6</number>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-       </spacer>
+        <item>
+         <widget class="QPushButton" name="btnSelectTool">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Chọn Vùng</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/selection-box.png</normaloff>:/Resize/selection-box.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnRoundedCorners">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Bo Góc</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/corner.png</normaloff>:/Resize/corner.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnToggleGrid">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Lưới</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/grid.png</normaloff>:/Resize/grid.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFlipHorizontal">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Chuyển Đổi Ngang</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/horizontal-flip.png</normaloff>:/Resize/horizontal-flip.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFlipVertical">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Chuyển Đổi Dọc</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/vertical-flip.png</normaloff>:/Resize/vertical-flip.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLink">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Liên Kết</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/link.png</normaloff>:/Resize/link.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnResizePage">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Kích Thước Vẽ</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/resize-option.png</normaloff>:/Resize/resize-option.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLayers">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Lớp</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/layers.png</normaloff>:/Resize/layers.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMeasure">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Thước Đo</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/measure.png</normaloff>:/Resize/measure.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFillColor">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Màu Tô</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/paint-bucket.png</normaloff>:/Resize/paint-bucket.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnStrokeColor">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Màu Viền</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/tool.png</normaloff>:/Resize/tool.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSwapFillStroke">
+          <property name="minimumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>36</width>
+            <height>36</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Hoán Đổi Màu Tô/Viền</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+             background-color: #FFFFFF;
+             border: 1px solid #E0E0E0;
+             border-radius: 5px;
+            }
+            QPushButton:hover {
+             background-color: #E0E0E0;
+            }
+            QPushButton:checked {
+             background-color: #2196F3;
+             border-color: #1565C0;
+            }</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../img/Roots_img.qrc">
+            <normaloff>:/Resize/stroke.png</normaloff>:/Resize/stroke.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
