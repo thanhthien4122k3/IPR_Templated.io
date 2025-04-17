@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LayerOrderWindow</class>
+ <widget class="QMainWindow" name="LayerOrderWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>200</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Layer Order</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout1">
+      <item>
+       <widget class="QPushButton" name="btnToBack">
+        <property name="text">
+         <string>To back</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/arrows/up_arrow.png</normaloff>:/arrows/up_arrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout2">
+      <item>
+       <widget class="QPushButton" name="btnBackward">
+        <property name="text">
+         <string>Backward</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/arrows/up_double_arrow.png</normaloff>:/arrows/up_double_arrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout3">
+      <item>
+       <widget class="QPushButton" name="btnForward">
+        <property name="text">
+         <string>Forward</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/arrows/down_double_arrow.png</normaloff>:/arrows/down_double_arrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout4">
+      <item>
+       <widget class="QPushButton" name="btnToFront">
+        <property name="text">
+         <string>To front</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../img/Roots_img.qrc">
+          <normaloff>:/arrows/down_arrow.png</normaloff>:/arrows/down_arrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../img/Roots_img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
