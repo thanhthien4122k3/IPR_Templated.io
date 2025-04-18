@@ -127,7 +127,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../img/Roots_img.qrc">
+         <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
           <normaloff>:/button/buttontext.png</normaloff>:/button/buttontext.png</iconset>
         </property>
         <property name="iconSize">
@@ -176,7 +176,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../img/Roots_img.qrc">
+         <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
           <normaloff>:/button/button_shape.png</normaloff>:/button/button_shape.png</iconset>
         </property>
         <property name="iconSize">
@@ -225,8 +225,8 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../img/upload-button.png</normaloff>../img/upload-button.png</iconset>
+         <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
+          <normaloff>:/button/upload-button.png</normaloff>:/button/upload-button.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -274,7 +274,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../img/Roots_img.qrc">
+         <iconset resource="D:/QT_Designer/IPR/img/Roots_img.qrc">
           <normaloff>:/button/images-square-outlined-interface-button-symbol.png</normaloff>:/button/images-square-outlined-interface-button-symbol.png</iconset>
         </property>
         <property name="iconSize">
@@ -1202,7 +1202,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../img/Roots_img.qrc"/>
+  <include location="D:/QT_Designer/IPR/img/Roots_img.qrc"/>
  </resources>
  <connections/>
 </ui>
